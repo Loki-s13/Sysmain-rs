@@ -1,3 +1,17 @@
+mod winsys;
+mod macsys;
+mod logging;
+
+
+
+use winsys::*;
+use logging::*;
+
+
 fn main() {
-    println!("Hello, world!");
+    logs();
+
+
+    tempclean_win();
+   
 }
