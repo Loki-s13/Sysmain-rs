@@ -7,12 +7,13 @@ use dirs::{desktop_dir};
 /// Sets up logging for the application.
 pub fn logs() {
 
+    //gets the desktop path for the user
     let desktop_path = desktop_dir();
-
+    
     let mut log_file = desktop_path.unwrap();
     log_file.push("Temp_logs.log");
 
-
+    //create and log the changes to the file
     let log_file = match  File::create(&log_file) {
         Ok(file) => file,
         Err(e) => {
