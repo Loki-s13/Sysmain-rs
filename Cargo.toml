@@ -4,5 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+dirs = "5.0.1"
 tracing = "0.1.40"
+tracing-appender = "0.2.3"
 tracing-subscriber = {version = "0.3.18", features = ["env-filter"] }
