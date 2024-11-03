@@ -1,10 +1,7 @@
 use std::env;
 
-
-
-
-#[cfg(target_os = "macos")]
-pub fn tempclean_Mac(){
+/// Cleans out the temporary directory and its contents.
+pub fn tempclean() {
     let dir = env::temp_dir();
     println!("Temporary directory: {}", dir.display());
 }
