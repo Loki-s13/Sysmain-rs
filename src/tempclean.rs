@@ -4,6 +4,7 @@ use tracing::level_filters::LevelFilter;
 
 /// Cleans out the temporary directory and its contents.
 pub fn tempclean() {
+    
     let dir = env::temp_dir();
     info!("Temporary directory: {}", dir.display());
 

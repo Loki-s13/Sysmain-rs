@@ -1,7 +1,7 @@
-use tracing::{ Level};
+use tracing:: Level;
 use tracing_subscriber::EnvFilter;
-use std::{fs::File, sync::Mutex, path::PathBuf};
-use dirs::{desktop_dir};
+use std::{fs::File, sync::Mutex};
+use dirs::desktop_dir;
 
 
 /// Sets up logging for the application.
@@ -37,5 +37,6 @@ pub fn logs() {
         .with_writer(Mutex::new(log_file))
         .with_max_level(Level::TRACE)
         .with_env_filter(filter)
+        .with_ansi(false)
         .init();
 }
