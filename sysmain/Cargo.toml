@@ -1,0 +1,11 @@
+[package]
+name = "sysmain"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.20", features = ["derive"] }
+dirs = "5.0.1"
+tracing.workspace = true
+tracing-subscriber.workspace = true
+sysmain-lib = {path="../sysmain-lib"}
