@@ -11,21 +11,21 @@ use super::BrowserSelection;
 /// functionality to clear the cache contents.
 pub struct BrowserCache {
 	/// Vector of paths to browser cache directories
-	pub cache_paths: Vec<PathBuf>,
+	cache_paths: Vec<PathBuf>,
 }
 
 impl BrowserCache {
 	/// Creates a new `BrowserCache` instance for the specified browser type
 	///
 	/// # Arguments
-	/// * `browser_name` - The browser type to create cache paths for, as a
+	/// * `browser` - The browser type to create cache paths for, as a
 	///   [`BrowserSelection`]
 	///
 	/// # Returns
 	/// A new `BrowserCache` instance with paths initialized for the specified
 	/// browser
-	pub fn new(browser_name: BrowserSelection) -> Self {
-		let cache_paths = browser_name.get_cache_path();
+	pub fn new(browser: BrowserSelection) -> Self {
+		let cache_paths = browser.get_cache_path();
 		BrowserCache { cache_paths }
 	}
 
