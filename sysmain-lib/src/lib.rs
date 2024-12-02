@@ -1,3 +1,4 @@
+pub mod browser;
 pub mod error;
 mod tempclean;
 pub use error::Result;
