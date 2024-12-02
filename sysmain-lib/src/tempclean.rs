@@ -30,13 +30,13 @@ pub fn tempclean() -> Result<()> {
 	for entry_result in entries {
 		total_entries += 1;
 		// use inspect_err to log the error if the entry_result is of the Err variant
-		if let Ok(entry) = entry_result.inspect_err(|e| error!("error reading directory entry: {e}")) {
+		if let Ok(entry) = entry_result.inspect_err(|e| error!("Error reading directory entry: {e}")) {
 			if process_entry(entry).inspect_err(|e| error!("{e}")).is_ok() {
 				successful_deletes += 1;
 			}
 		}
 	}
-	info!("successfully deleted {} out of {} files", successful_deletes, total_entries);
+	info!("Successfully deleted {} out of {} files", successful_deletes, total_entries);
 
 	Ok(())
 }
